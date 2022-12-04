@@ -14,11 +14,23 @@ const Cart = function(items) {
 
 Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+  let newItem = Cart.item(product,quantity);
+  this.items.push.newItem;
 };
 
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  let cartItem = JSON.stringify(state.allProducts);
+
+  localStorage.setItem('cartItem', cartItem);
+  let savedItem = localStorage.getItem('savedItem');
+  allProducts = JSON.parse(savedItem);
+  console.log(cartItem);
+
+
 };
+
+// saving to local Storage, use JSON.stringify(this.items)
 
 Cart.prototype.removeItem = function(item) {
   // TODO: Fill in this instance method to remove one item from the cart.
@@ -60,4 +72,5 @@ function generateCatalog() {
 }
 
 // Initialize the app by creating the big list of products with images and names
+// Cart.saveToLocalStorage();
 generateCatalog();

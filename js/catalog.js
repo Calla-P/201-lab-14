@@ -10,10 +10,21 @@ state.cart = new Cart([]);
 function populateForm() {
 
   //TODO: Add an <option> tag inside the form's select for each product
+
+  // const selectElement = document.getElementById('items');
+  // for (let i in state.allProducts) {
+
   const selectElement = document.getElementById('items');
-  for (let i in state.allProducts) {
+  for (let i = 0; i < state.allProducts.length; i++) {
+    let dropDown = document.createElement('option');
+    dropDown.innerText = state.allProducts[i].name;
+    dropDown.value = state.allProducts[i].name;
+    dropDown.id = state.allProducts[i].name;
+    selectElement.appendChild(dropDown);
 
   }
+  console.log('option');
+  console.log(state.allProducts);
 
 }
 
